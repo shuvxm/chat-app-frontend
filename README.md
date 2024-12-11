@@ -17,4 +17,109 @@ Currently, two official plugins are available:
 - this notify is a function to execute with message
 - const notify = () => toast('Here is your toast.');
 - npm install @stomp/stompjs sockjs-client
+## Installation Steps
+
+### Install Tailwind CSS
+
+1. **Add Tailwind dependencies:**
+   ```bash
+   npm install -D tailwindcss postcss autoprefixer
+   npx tailwindcss init
+   ```
+
+2. **Configure Tailwind:**
+   Update `tailwind.config.js` with the following:
+   ```javascript
+   module.exports = {
+     content: ['./index.html', './src/**/*.{js,jsx,ts,tsx}'],
+     theme: {
+       extend: {},
+     },
+     plugins: [],
+   };
+   ```
+
+3. **Include Tailwind in styles:**
+   Add the following to `src/index.css`:
+   ```css
+   @tailwind base;
+   @tailwind components;
+   @tailwind utilities;
+   ```
+
+### Set Up React Router
+
+1. **Install React Router:**
+   ```bash
+   npm install react-router-dom
+   ```
+
+2. **Set up routing in your app:**
+   Update `main.jsx` with:
+   ```jsx
+   import { BrowserRouter, Routes, Route } from 'react-router-dom';
+   import App from './App';
+
+   ReactDOM.createRoot(document.getElementById('root')).render(
+     <React.StrictMode>
+       <BrowserRouter>
+         <Routes>
+           <Route path="/" element={<App />} />
+         </Routes>
+       </BrowserRouter>
+     </React.StrictMode>
+   );
+   ```
+
+### Add Toast Notifications
+
+1. **Install `react-hot-toast`:**
+   ```bash
+   npm install react-hot-toast
+   ```
+
+2. **Integrate Toast in `main.jsx`:**
+   ```jsx
+   import { Toaster } from 'react-hot-toast';
+
+   ReactDOM.createRoot(document.getElementById('root')).render(
+     <React.StrictMode>
+       <BrowserRouter>
+         <Toaster />
+         <Routes>
+           <Route path="/" element={<App />} />
+         </Routes>
+       </BrowserRouter>
+     </React.StrictMode>
+   );
+   ```
+
+3. **Create a Toast button in your component:**
+   ```jsx
+   import toast from 'react-hot-toast';
+
+   const notify = () => toast('Here is your toast.');
+
+   function App() {
+     return (
+       <div>
+         <button onClick={notify}>Make me a toast</button>
+       </div>
+     );
+   }
+
+   export default App;
+   ```
+
+### Add WebSocket Support
+
+1. **Install WebSocket dependencies:**
+   ```bash
+   npm install @stomp/stompjs sockjs-client
+   ```
+
+---
+
+Your React + Vite app is now set up with Tailwind CSS, React Router, toast notifications, and WebSocket support!
+
 
