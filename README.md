@@ -17,3 +17,5 @@ Currently, two official plugins are available:
 - this notify is a function to execute with message
 - const notify = () => toast('Here is your toast.');
 - npm install @stomp/stompjs sockjs-client
+// "https://avatar.iran.liara.run/public/32"
+                    // https://avatar.iran.liara.run/public/girl
