@@ -1,7 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 import chatIcon from "../assets/chat.png"
 
 const JoinCreateChat = () => {
+
+  const [detail, setDetail] = useState({
+    roomId:'',
+    userName:'',
+  });
+
+  // function handleForm
+
   return (
     // border
     <div className="min-h-screen flex items-center justify-center">
